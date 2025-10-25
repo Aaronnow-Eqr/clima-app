@@ -4,6 +4,7 @@ function Home({ darkMode }) {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState("");
+  const [hour]
 
   const API_KEY = "6e126e4d024fbd0367a121cf5a4ce377"
 
@@ -39,6 +40,15 @@ function Home({ darkMode }) {
           <p className="text-lg capitalize">{weather.weather[0].description}</p>
           <img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt="icono clima" className="mx-auto"/>
           <p className="text-4xl font-semibold">{Math.round(weather.main.temp)}°C</p>
+
+          <div className="mt-4 text-left">
+            <p>Sensacion termica: {Math.round(weather.main.feels_like)}°C</p>
+            <p>Humedad: {weather.main.humidity}%</p>
+            <p>Viento: {Math.round(weather.wind.speed * 3.6)} km/h</p>
+            <p>Presion: {weather.main.pressure} hPa</p>
+            <p>Visibilidad: {weather.visibility / 1000} km</p>
+            <p>Nubosidad: {weather.clouds.all}%</p>
+          </div>
         </div>
       )}
     </div>
@@ -46,3 +56,5 @@ function Home({ darkMode }) {
 }
 
 export default Home;
+
+39.50
