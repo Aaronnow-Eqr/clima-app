@@ -1,10 +1,8 @@
-import { createContext, useState, useEffect } from 'react';
 import { createContext, useState, useEffect } from "react";
 
 export const DarkModeContext = createContext();
 
-export const DarkModeProvider = ({ children }) => {
-  const [darkMode, setDarkMode] = useState(false);export function DarkModeProvider({ children }) {
+export function DarkModeProvider({ children }) {
   const [darkMode, setDarkMode] = useState(() => {
     // Cargar el valor guardado del modo oscuro si existe
     const saved = localStorage.getItem("darkMode");
