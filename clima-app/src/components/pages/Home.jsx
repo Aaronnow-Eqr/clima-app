@@ -95,4 +95,3 @@ function Home({ darkMode }) {
 
 export default Home;
 
-39.50
